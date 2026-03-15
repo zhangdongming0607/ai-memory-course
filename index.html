@@ -19,6 +19,10 @@
   .lesson-num { font-size: 1.5em; font-weight: 700; color: #6366f1; min-width: 48px; text-align: center; margin-right: 16px; }
   .lesson-info h3 { font-size: 1.05em; margin-bottom: 4px; }
   .lesson-info p { font-size: 0.9em; color: #666; }
+  .lesson-actions { margin-left: auto; display: flex; gap: 8px; flex-shrink: 0; }
+  .colab-btn { display: inline-flex; align-items: center; gap: 4px; background: #F9AB00; color: #fff; font-size: 0.75em; font-weight: 600; padding: 4px 10px; border-radius: 6px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .colab-btn:hover { background: #e09900; }
+  .colab-btn svg { width: 14px; height: 14px; }
   .footer { text-align: center; color: #999; margin-top: 40px; font-size: 0.85em; }
 </style>
 </head>
@@ -33,16 +37,16 @@
   </div>
 
   <ul class="lessons">
-    <li><a href="01-what-is-llm.html"><span class="lesson-num">01</span><div class="lesson-info"><h3>LLM 是什么</h3><p>Token、Prompt、Context Window 这些基本概念</p></div></a></li>
-    <li><a href="02-talk-to-llm.html"><span class="lesson-num">02</span><div class="lesson-info"><h3>和 LLM 对话</h3><p>用 Python 调 OpenAI API，亲手发一条消息</p></div></a></li>
-    <li><a href="03-extract-structured-info.html"><span class="lesson-num">03</span><div class="lesson-info"><h3>让 AI 提取结构化信息</h3><p>Prompt Engineering、JSON 输出、从聊天记录提取人物信息</p></div></a></li>
-    <li><a href="04-memory-storage.html"><span class="lesson-num">04</span><div class="lesson-info"><h3>记忆的存储</h3><p>数据库存储 vs 向量检索，Embedding 是什么</p></div></a></li>
-    <li><a href="05-memory-update.html"><span class="lesson-num">05</span><div class="lesson-info"><h3>记忆的更新</h3><p>新旧信息冲突怎么办、增量更新、差分合并算法</p></div></a></li>
-    <li><a href="06-memory-in-prompt.html"><span class="lesson-num">06</span><div class="lesson-info"><h3>记忆的应用</h3><p>RAG 是什么、怎么把记忆注入 Prompt</p></div></a></li>
-    <li><a href="07-hands-on-mem0.html"><span class="lesson-num">07</span><div class="lesson-info"><h3>实战：联系人记忆</h3><p>用 Mem0 搭一个简化版的联系人记忆系统</p></div></a></li>
-    <li><a href="08-streaming-sse.html"><span class="lesson-num">08</span><div class="lesson-info"><h3>流式输出</h3><p>SSE 协议、打字机效果、前端怎么接</p></div></a></li>
-    <li><a href="09-async-tasks.html"><span class="lesson-num">09</span><div class="lesson-info"><h3>后台任务</h3><p>异步队列、任务链、为什么需要它</p></div></a></li>
-    <li><a href="10-your-system.html"><span class="lesson-num">10</span><div class="lesson-info"><h3>回到你们的系统</h3><p>逐块解读 memory_system_overview.md</p></div></a></li>
+    <li><a href="01-what-is-llm.html"><span class="lesson-num">01</span><div class="lesson-info"><h3>LLM 是什么</h3><p>Token、Prompt、Context Window 这些基本概念</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/01-what-is-llm.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="02-talk-to-llm.html"><span class="lesson-num">02</span><div class="lesson-info"><h3>和 LLM 对话</h3><p>用 Python 调 OpenAI API，亲手发一条消息</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/02-talk-to-llm.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="03-extract-structured-info.html"><span class="lesson-num">03</span><div class="lesson-info"><h3>让 AI 提取结构化信息</h3><p>Prompt Engineering、JSON 输出、从聊天记录提取人物信息</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/03-extract-structured-info.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="04-memory-storage.html"><span class="lesson-num">04</span><div class="lesson-info"><h3>记忆的存储</h3><p>数据库存储 vs 向量检索，Embedding 是什么</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/04-memory-storage.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="05-memory-update.html"><span class="lesson-num">05</span><div class="lesson-info"><h3>记忆的更新</h3><p>新旧信息冲突怎么办、增量更新、差分合并算法</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/05-memory-update.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="06-memory-in-prompt.html"><span class="lesson-num">06</span><div class="lesson-info"><h3>记忆的应用</h3><p>RAG 是什么、怎么把记忆注入 Prompt</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/06-memory-in-prompt.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="07-hands-on-mem0.html"><span class="lesson-num">07</span><div class="lesson-info"><h3>实战：联系人记忆</h3><p>用 Mem0 搭一个简化版的联系人记忆系统</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/07-hands-on-mem0.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="08-streaming-sse.html"><span class="lesson-num">08</span><div class="lesson-info"><h3>流式输出</h3><p>SSE 协议、打字机效果、前端怎么接</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/08-streaming-sse.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="09-async-tasks.html"><span class="lesson-num">09</span><div class="lesson-info"><h3>后台任务</h3><p>异步队列、任务链、为什么需要它</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/09-async-tasks.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
+    <li><a href="10-your-system.html"><span class="lesson-num">10</span><div class="lesson-info"><h3>回到你们的系统</h3><p>逐块解读 memory_system_overview.md</p></div><div class="lesson-actions"><a href="https://colab.research.google.com/github/zhangdongming0607/ai-memory-course/blob/main/10-your-system.ipynb" target="_blank" class="colab-btn" onclick="event.stopPropagation()">Colab</a></div></a></li>
   </ul>
 
   <p class="footer">从第 1 课开始，每课约 30-60 分钟</p>
