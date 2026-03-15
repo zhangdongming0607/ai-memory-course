@@ -1,0 +1,19 @@
+title: AI 记忆系统入门课程
+author: Yomoa Team
+logo: ""
+
+execute:
+  execute_notebooks: "off"
+
+html:
+  use_issues_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+
+repository:
+  url: https://github.com/niceferrari/ai-memory-course
+  branch: main
+
+sphinx:
+  config:
+    language: zh

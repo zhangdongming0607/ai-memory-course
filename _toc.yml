@@ -1,0 +1,17 @@
+# AI 记忆系统入门课程
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+  - file: 01-what-is-llm
+  - file: 02-talk-to-llm
+  - file: 03-extract-structured-info
+  - file: 04-memory-storage
+  - file: 05-memory-update
+  - file: 06-memory-in-prompt
+  - file: 07-hands-on-mem0
+  - file: 08-streaming-sse
+  - file: 09-async-tasks
+  - file: 10-your-system
