@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>02-talk-to-llm</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>和 LLM 对话 - AI 记忆系统入门课程</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7793,8 +7793,251 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<style id="youyou-brand">
+/* === YouYou AI Brand Theme === */
+:root {
+  --yy-purple: #B07CD8;
+  --yy-mint: #5DE8C8;
+  --yy-yellow: #F5D56E;
+  --yy-bg-start: #fdf2f8;
+  --yy-bg-mid: #ede9fe;
+  --yy-bg-end: #fef3c7;
+  --yy-text: #1e1b2e;
+  --yy-text-secondary: #6b7280;
+}
+
+body.jp-Notebook {
+  background: linear-gradient(135deg, var(--yy-bg-start) 0%, var(--yy-bg-mid) 50%, var(--yy-bg-end) 100%) !important;
+  background-attachment: fixed !important;
+  padding-top: 64px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Noto Sans SC", sans-serif !important;
+}
+
+body.jp-Notebook > main {
+  max-width: 820px !important;
+  margin: 0 auto !important;
+  padding: 0 20px 80px !important;
+}
+
+/* Navigation bar */
+.yy-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(176, 124, 216, 0.1);
+  padding: 0 20px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif;
+}
+
+.yy-nav a {
+  text-decoration: none;
+  color: var(--yy-text);
+  font-size: 0.85em;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.yy-nav a:hover {
+  background: rgba(176, 124, 216, 0.1);
+  color: var(--yy-purple);
+}
+
+.yy-nav-title {
+  font-size: 0.85em !important;
+  font-weight: 600 !important;
+  color: var(--yy-text) !important;
+  text-align: center;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 8px !important;
+}
+
+.yy-nav-left, .yy-nav-right {
+  min-width: 80px;
+}
+
+.yy-nav-right {
+  text-align: right;
+}
+
+.yy-nav a.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Cards / Cells */
+.jp-Cell {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 16px !important;
+  margin-bottom: 16px !important;
+  border: 1px solid rgba(255,255,255,0.6) !important;
+  box-shadow: 0 2px 12px rgba(140, 100, 180, 0.06) !important;
+  overflow: hidden;
+}
+
+.jp-Cell:hover {
+  box-shadow: 0 4px 20px rgba(140, 100, 180, 0.1) !important;
+}
+
+/* Headings */
+.jp-RenderedHTMLCommon h1 {
+  background: linear-gradient(135deg, var(--yy-purple) 0%, #8b5cf6 50%, var(--yy-mint) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 800 !important;
+  margin-top: 8px !important;
+}
+
+.jp-RenderedHTMLCommon h2 {
+  color: #4c1d95 !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid rgba(176, 124, 216, 0.15) !important;
+  padding-bottom: 8px !important;
+}
+
+.jp-RenderedHTMLCommon h3 {
+  color: #5b21b6 !important;
+  font-weight: 650 !important;
+}
+
+/* Hide anchor links */
+.anchor-link { display: none !important; }
+
+/* Code blocks */
+.jp-Cell.jp-CodeCell {
+  border-left: 3px solid var(--yy-purple) !important;
+}
+
+.jp-InputPrompt, .jp-OutputPrompt {
+  color: var(--yy-purple) !important;
+  font-weight: 600 !important;
+}
+
+/* Tables */
+.jp-RenderedHTMLCommon table {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: 0 1px 6px rgba(140, 100, 180, 0.08) !important;
+}
+
+.jp-RenderedHTMLCommon th {
+  background: linear-gradient(135deg, #ede9fe, #fdf2f8) !important;
+  color: #4c1d95 !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 10px 14px !important;
+}
+
+.jp-RenderedHTMLCommon td {
+  border: none !important;
+  border-top: 1px solid rgba(176, 124, 216, 0.1) !important;
+  padding: 10px 14px !important;
+}
+
+.jp-RenderedHTMLCommon tr:nth-child(even) {
+  background: rgba(237, 233, 254, 0.2) !important;
+}
+
+/* Blockquotes */
+.jp-RenderedHTMLCommon blockquote {
+  border-left: 4px solid var(--yy-purple) !important;
+  background: rgba(237, 233, 254, 0.3) !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 12px 16px !important;
+  margin: 12px 0 !important;
+}
+
+/* Links */
+.jp-RenderedHTMLCommon a {
+  color: #7c3aed !important;
+  text-decoration-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+.jp-RenderedHTMLCommon a:hover {
+  color: var(--yy-purple) !important;
+  text-decoration-color: var(--yy-purple) !important;
+}
+
+/* Inline code */
+.jp-RenderedHTMLCommon code:not(.highlight code) {
+  background: rgba(237, 233, 254, 0.5) !important;
+  color: #7c3aed !important;
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-size: 0.9em !important;
+}
+
+/* Bottom navigation */
+.yy-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-top: 32px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif;
+}
+
+.yy-bottom-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--yy-text);
+  font-size: 0.9em;
+  font-weight: 500;
+  box-shadow: 0 2px 12px rgba(140, 100, 180, 0.08);
+  transition: all 0.2s;
+}
+
+.yy-bottom-nav a:hover {
+  box-shadow: 0 4px 16px rgba(140, 100, 180, 0.16);
+  transform: translateY(-1px);
+  color: #7c3aed;
+}
+
+.yy-bottom-nav a.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body.jp-Notebook > main { padding: 0 12px 60px !important; }
+  .jp-Cell { border-radius: 12px !important; }
+  .yy-nav { padding: 0 12px; }
+  .yy-nav-left, .yy-nav-right { min-width: 56px; }
+}
+</style>
+
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<nav class="yy-nav">
+  <div class="yy-nav-left"><a href="01-what-is-llm.html">&lsaquo; 上一课</a></div>
+  <a href="index.html" class="yy-nav-title">和 LLM 对话</a>
+  <div class="yy-nav-right"><a href="03-extract-structured-info.html">下一课 &rsaquo;</a></div>
+</nav>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8294,6 +8537,10 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="yy-bottom-nav">
+  <a href="01-what-is-llm.html">&lsaquo; LLM 是什么</a>
+  <a href="03-extract-structured-info.html">让 AI 提取结构化信息 &rsaquo;</a>
 </div>
 </main>
 </body>
